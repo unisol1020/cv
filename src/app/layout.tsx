@@ -1,3 +1,4 @@
+import Layout from "@/components/Layout";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -34,9 +35,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative flex min-h-svh flex-col bg-background">
-            {children}
-          </div>
+          <Layout>{children}</Layout>
         </ThemeProvider>
       </body>
     </html>
