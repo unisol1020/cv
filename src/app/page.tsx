@@ -1,5 +1,3 @@
-import { About } from "@/components/about";
-
 export default function Home() {
-  return <About />;
+  return <div>Hello World</div>;
 }
