@@ -7,7 +7,7 @@ export default function Layout({ children }: PropsWithChildren) {
     <div>
       <Header />
 
-      <main className="relative flex min-h-svh flex-col bg-background max-w-screen-lg w-full mx-auto">
+      <main className="relative flex min-h-svh flex-col bg-background max-w-screen-lg w-full mx-auto pb-10">
         {children}
         <ScrollIndicator />
       </main>
