@@ -9,8 +9,8 @@ const hiddenText = `Hiding\n bad\n stuff\n since\n 2020`;
 
 export default function About() {
   return (
-    <div className="flex flex-col items-center justify-center gap-20 w-full">
-      <div className="flex flex-col gap-20 min-h-svh">
+    <div className="flex flex-col items-center w-full">
+      <div className="flex flex-col gap-20 min-h-svh items-center justify-center">
         <HoverableText
           defaultText={defaultText}
           hiddenText={hiddenText}

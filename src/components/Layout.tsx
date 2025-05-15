@@ -1,13 +1,15 @@
 import { PropsWithChildren } from "react";
 import Header from "./Header";
+import ScrollIndicator from "./ScrollIndicator";
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
     <div>
       <Header />
 
-      <main className="relative flex min-h-svh flex-col bg-background max-w-screen-lg w-full mx-auto py-20">
+      <main className="relative flex min-h-svh flex-col bg-background max-w-screen-lg w-full mx-auto">
         {children}
+        <ScrollIndicator />
       </main>
     </div>
   );
