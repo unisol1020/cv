@@ -41,8 +41,8 @@ export default function Cursor() {
         damping: 28,
         x: { duration: expanded ? 0 : 0.1 },
         y: { duration: expanded ? 0 : 0.1 },
-        width: { duration: 1, type: "spring" },
-        height: { duration: 1, type: "spring" },
+        width: { duration: 0.5, type: "spring" },
+        height: { duration: 0.5, type: "spring" },
       }}
       initial={{
         opacity: 0,
