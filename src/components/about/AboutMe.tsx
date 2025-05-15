@@ -6,7 +6,7 @@ const hiddenText = `When I'm not obsessing over React, I'm secretly negotiating 
 export default function AboutMe() {
   return (
     <div className="flex flex-col gap-5 w-full">
-      <h1 className="text-2xl font-bold">About Me</h1>
+      <h1 className="text-2xl font-semibold">About Me</h1>
 
       <HoverableText
         defaultText={defaultText}
