@@ -21,7 +21,6 @@ async function fetchExperienceData(): Promise<{
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   );
 
-  // Fetch experiences
   const { data: experiencesData, error: experiencesError } = await supabase
     .from("experiences")
     .select("*")
@@ -32,7 +31,6 @@ async function fetchExperienceData(): Promise<{
     throw experiencesError;
   }
 
-  // Fetch experience details
   const { data: experienceDetailsData, error: experienceDetailsError } =
     await supabase
       .from("experience_details")
@@ -44,7 +42,6 @@ async function fetchExperienceData(): Promise<{
     throw experienceDetailsError;
   }
 
-  // Fetch projects
   const { data: projectsData, error: projectsError } = await supabase
     .from("projects")
     .select("*")
@@ -55,7 +52,6 @@ async function fetchExperienceData(): Promise<{
     throw projectsError;
   }
 
-  // Fetch project details
   const { data: projectDetailsData, error: projectDetailsError } =
     await supabase
       .from("project_details")
@@ -67,7 +63,6 @@ async function fetchExperienceData(): Promise<{
     throw projectDetailsError;
   }
 
-  // Combine experiences with their details
   const experiences = experiencesData.map((experience) => ({
     ...experience,
     details: experienceDetailsData.filter(
@@ -75,7 +70,6 @@ async function fetchExperienceData(): Promise<{
     ),
   }));
 
-  // Combine projects with their details
   const projects = projectsData.map((project) => ({
     ...project,
     details: projectDetailsData.filter(
@@ -88,7 +82,7 @@ async function fetchExperienceData(): Promise<{
 
 export function useExperience() {
   const { data, isLoading, error } = useQuery({
-    queryKey: ["experience-data"],
+    queryKey: ["experience"],
     queryFn: fetchExperienceData,
   });
 

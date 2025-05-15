@@ -1,22 +1,24 @@
 "use client";
 
+import { HoverableText } from "../HoverableText";
 import ExperienceItem from "./ExperienceItem";
 import ProjectItem from "./ProjectItem";
 import { useExperience } from "./useExperience";
 
-export function Experience() {
-  const { experiences, projects, isLoading } = useExperience();
+const defaultTitleText = "Crafting good code";
+const hiddenTitleText = "Being honest is not all code";
 
-  if (isLoading) {
-    return (
-      <div className="flex justify-center items-center min-h-[400px]">
-        <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full"></div>
-      </div>
-    );
-  }
+export function Experience() {
+  const { experiences, projects } = useExperience();
 
   return (
-    <div className="w-full max-w-4xl mx-auto px-4" id="experience">
+    <div className="flex flex-col gap-12 w-full" id="experience">
+      <HoverableText
+        defaultText={defaultTitleText}
+        hiddenText={hiddenTitleText}
+        className="text-4xl font-semibold"
+      />
+
       <div className="grid grid-cols-1 gap-8 md:grid-cols-1 lg:grid-cols-1">
         <div>
           <h2 className="text-2xl font-bold mb-6 inline-block border-b-2 border-primary pb-1">

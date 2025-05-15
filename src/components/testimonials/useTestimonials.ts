@@ -28,13 +28,12 @@ async function fetchTestimonials(): Promise<Testimonial[]> {
 }
 
 export function useTestimonials() {
-  const { data: testimonials = [], isLoading } = useQuery({
+  const { data: testimonials = [] } = useQuery({
     queryKey: ["testimonials"],
     queryFn: fetchTestimonials,
   });
 
   return {
     testimonials,
-    isLoading,
   };
 }
