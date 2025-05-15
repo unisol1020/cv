@@ -10,7 +10,7 @@ interface HoverableTextProps {
   className?: string;
 }
 
-const expandedRadius = 100;
+const expandedRadius = 130;
 
 export function HoverableText({
   defaultText,

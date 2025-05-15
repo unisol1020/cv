@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout";
+import { Layout } from "@/components/layout";
 import { CursorProvider } from "@/providers/CursorProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import type { Metadata } from "next";
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`min-h-svh ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`min-h-svh ${geistSans.variable} ${geistMono.variable} antialiased cursor-none`}
       >
         <ThemeProvider
           attribute="class"
