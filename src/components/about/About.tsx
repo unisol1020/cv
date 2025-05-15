@@ -4,8 +4,8 @@ import { HoverableText } from "../HoverableText";
 import AboutMe from "./AboutMe";
 import DownloadCV from "./DownloadCV";
 
-const defaultText = `Making\n good\n stuff\n since\n 2020`;
-const hiddenText = `Hiding\n bad\n stuff\n since\n 2020`;
+const defaultText = `<span class="text-base">Max Levchuk</span>\nMaking\n good\n stuff\n since\n 2020`;
+const hiddenText = `<span class="text-base">Max Levchuk</span>\nHiding\n bad\n stuff\n since\n 2020`;
 
 export default function About() {
   return (

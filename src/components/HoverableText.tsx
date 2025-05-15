@@ -62,7 +62,7 @@ export function HoverableText({
           dangerouslySetInnerHTML={{ __html: defaultText }}
         />
       ) : (
-        <span
+        <div
           className="whitespace-pre-line select-none"
           dangerouslySetInnerHTML={{ __html: defaultText }}
         />
