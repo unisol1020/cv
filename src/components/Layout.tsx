@@ -1,9 +1,14 @@
+"use client";
+
+import { useIsTabletOrMobile } from "@/hooks/useMediaQuery";
 import { PropsWithChildren } from "react";
 import Header from "./Header";
 import ScrollIndicator from "./ScrollIndicator";
 import SocialLinks from "./SocialLinks";
 
 export default function Layout({ children }: PropsWithChildren) {
+  const isTabletOrMobile = useIsTabletOrMobile();
+
   return (
     <div>
       <Header />
@@ -12,9 +17,13 @@ export default function Layout({ children }: PropsWithChildren) {
         {children}
       </main>
 
-      <ScrollIndicator />
+      {!isTabletOrMobile && (
+        <>
+          <ScrollIndicator />
 
-      <SocialLinks />
+          <SocialLinks />
+        </>
+      )}
     </div>
   );
 }

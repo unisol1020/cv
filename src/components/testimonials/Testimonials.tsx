@@ -1,11 +1,9 @@
-"use client";
-
+import { getTestimonials } from "./getTestimonials";
 import { TestimonialCarousel } from "./TestimonialCarousel";
 import { TestimonialsHeader } from "./TestimonialsHeader";
-import { useTestimonials } from "./useTestimonials";
 
-export function Testimonials() {
-  const { testimonials } = useTestimonials();
+export async function Testimonials() {
+  const testimonials = await getTestimonials();
 
   return (
     <div className="w-full relative">
