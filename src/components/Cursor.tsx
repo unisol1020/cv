@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useContext, useEffect, useState } from "react";
 
 const defaultSize = 32;
-const expandedSize = 260;
+const expandedSize = 320;
 
 export default function Cursor() {
   const [mousePosition, setMousePosition] = useState({
