@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import { CursorProvider } from "@/providers/CursorProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
@@ -35,7 +36,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Layout>{children}</Layout>
+          <CursorProvider>
+            <Layout>{children}</Layout>
+          </CursorProvider>
         </ThemeProvider>
       </body>
     </html>
