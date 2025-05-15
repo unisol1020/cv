@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 export default function SocialLinks() {
   return (
-    <div className="fixed bottom-5 left-5 flex flex-col gap-5 items-center z-10">
+    <div className="fixed bottom-6 left-5 flex flex-col gap-5 items-center z-10">
       <Link
         href="https://github.com/unisol1020"
         target="_blank"
