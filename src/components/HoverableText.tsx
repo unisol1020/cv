@@ -42,7 +42,7 @@ export function HoverableText({
   return (
     <motion.div
       ref={setElementRef}
-      className={`relative cursor-none ${className}`}
+      className={`relative ${className}`}
       onMouseEnter={() => {
         setIsHovered(true);
         setExpanded(true);
@@ -54,39 +54,31 @@ export function HoverableText({
     >
       {isHovered ? (
         <div
-          className="relative"
+          className="relative whitespace-pre-line select-none"
           style={{
             maskImage: `radial-gradient(circle ${expandedRadius}px at ${mousePosition.x}px ${mousePosition.y}px, transparent 100%, black 100%)`,
             WebkitMaskImage: `radial-gradient(circle ${expandedRadius}px at ${mousePosition.x}px ${mousePosition.y}px, transparent 100%, black 100%)`,
           }}
-        >
-          <span
-            className="whitespace-pre-line"
-            dangerouslySetInnerHTML={{ __html: defaultText }}
-          />
-        </div>
+          dangerouslySetInnerHTML={{ __html: defaultText }}
+        />
       ) : (
         <span
-          className="whitespace-pre-line"
+          className="whitespace-pre-line select-none"
           dangerouslySetInnerHTML={{ __html: defaultText }}
         />
       )}
 
       {isHovered && (
         <motion.div
-          className="absolute left-0 top-0 overflow-hidden"
+          className="absolute left-0 top-0 overflow-hidden whitespace-pre-line select-none"
           style={{
             width: "100%",
             height: "100%",
             maskImage: `radial-gradient(circle ${expandedRadius}px at ${mousePosition.x}px ${mousePosition.y}px, black 100%, transparent 100%)`,
             WebkitMaskImage: `radial-gradient(circle ${expandedRadius}px at ${mousePosition.x}px ${mousePosition.y}px, black 100%, transparent 100%)`,
           }}
-        >
-          <span
-            className="whitespace-pre-line"
-            dangerouslySetInnerHTML={{ __html: hiddenText }}
-          />
-        </motion.div>
+          dangerouslySetInnerHTML={{ __html: hiddenText }}
+        />
       )}
     </motion.div>
   );
