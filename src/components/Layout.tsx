@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "react";
 import Header from "./Header";
 import ScrollIndicator from "./ScrollIndicator";
+import SocialLinks from "./SocialLinks";
 
 export default function Layout({ children }: PropsWithChildren) {
   return (
@@ -9,8 +10,11 @@ export default function Layout({ children }: PropsWithChildren) {
 
       <main className="relative flex min-h-svh flex-col bg-background max-w-screen-lg w-full mx-auto pb-10">
         {children}
-        <ScrollIndicator />
       </main>
+
+      <ScrollIndicator />
+
+      <SocialLinks />
     </div>
   );
 }
