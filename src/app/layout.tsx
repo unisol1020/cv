@@ -1,4 +1,4 @@
-import { Layout } from "@/components/layout";
+import Layout from "@/components/Layout";
 import { CursorProvider } from "@/providers/CursorProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import type { Metadata } from "next";

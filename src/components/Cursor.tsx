@@ -28,7 +28,7 @@ export default function Cursor() {
 
   return (
     <motion.div
-      className="pointer-events-none fixed left-0 top-0 z-50 rounded-full bg-foreground mix-blend-difference"
+      className="pointer-events-none fixed left-0 top-0 z-50 rounded-full bg-primary-foreground dark:bg-foreground mix-blend-difference"
       animate={{
         x: mousePosition.x - (expanded ? expandedSize / 2 : defaultSize / 2),
         y: mousePosition.y - (expanded ? expandedSize / 2 : defaultSize / 2),
