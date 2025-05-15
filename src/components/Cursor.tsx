@@ -1,6 +1,5 @@
 "use client";
 
-import { useIsTabletOrMobile } from "@/hooks/useMediaQuery";
 import { CursorContext } from "@/providers/CursorProvider";
 import { motion } from "framer-motion";
 import { useContext, useEffect, useState } from "react";
@@ -9,7 +8,6 @@ const defaultSize = 32;
 const expandedSize = 320;
 
 export default function Cursor() {
-  const isTabletOrMobile = useIsTabletOrMobile();
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
@@ -17,8 +15,6 @@ export default function Cursor() {
   const { expanded } = useContext(CursorContext);
 
   useEffect(() => {
-    if (isTabletOrMobile) return;
-
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
@@ -28,9 +24,7 @@ export default function Cursor() {
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
     };
-  }, [isTabletOrMobile]);
-
-  if (isTabletOrMobile) return null;
+  }, []);
 
   return (
     <motion.div
