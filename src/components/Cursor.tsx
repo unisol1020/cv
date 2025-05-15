@@ -35,6 +35,15 @@ export default function Cursor() {
         width: expanded ? expandedSize : defaultSize,
         height: expanded ? expandedSize : defaultSize,
       }}
+      transition={{
+        type: "spring",
+        stiffness: 500,
+        damping: 28,
+        x: { duration: expanded ? 0 : 0.1 },
+        y: { duration: expanded ? 0 : 0.1 },
+        width: { duration: 1, type: "spring" },
+        height: { duration: 1, type: "spring" },
+      }}
       initial={{
         opacity: 0,
         width: defaultSize,
