@@ -22,13 +22,12 @@ export function TestimonialCarousel({
   const scrollNext = () => emblaApi && emblaApi.scrollNext();
   const scrollTo = (index: number) => emblaApi && emblaApi.scrollTo(index);
 
-  const onSelect = () => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  };
-
   useEffect(() => {
     if (!emblaApi) return;
+
+    const onSelect = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    };
 
     onSelect();
     setScrollSnaps(emblaApi.scrollSnapList());
@@ -48,7 +47,7 @@ export function TestimonialCarousel({
       emblaApi.off("reInit", onSelect);
       clearInterval(autoplayTimer);
     };
-  }, [emblaApi, onSelect]);
+  }, [emblaApi]);
 
   return (
     <div className="relative">
